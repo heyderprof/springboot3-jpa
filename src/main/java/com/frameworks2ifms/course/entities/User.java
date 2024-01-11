@@ -20,7 +20,7 @@ public class User implements Serializable {
 	
 	@Id // configurando como chave primaria
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // define a estratégia para gerar valores automaticamente
-	private long id;
+	private Long id;
 	private String name;
 	private String email;
 	private String phone;
@@ -30,7 +30,7 @@ public class User implements Serializable {
 		
 	}
 
-	public User(long id, String name, String email, String phone, String password) {
+	public User(Long id, String name, String email, String phone, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -43,7 +43,7 @@ public class User implements Serializable {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
