@@ -3,11 +3,23 @@ package com.frameworks2ifms.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity // usado para indicar que a classe será mapeada para uma tabela da banco de dados
+@Table (name = "tb_user") // especificando o nome pois a expressão User é uma palavra reservada
+							//caso não seja utilizado, por convenção o nome da tabela será o nome da classe em minusculo
+
 public class User implements Serializable {
 	
 
 	private static final long serialVersionUID = 1L;
 	
+	@Id // configurando como chave primaria
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // define a estratégia para gerar valores automaticamente
 	private long id;
 	private String name;
 	private String email;
